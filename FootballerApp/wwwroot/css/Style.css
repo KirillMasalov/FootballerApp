@@ -1,0 +1,212 @@
+﻿.input-off {
+    display: none;
+}
+
+.display-off {
+    display: none;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+header {
+    padding: 0;
+    margin: 0;
+    background-image:url("../img/header-back.png");
+}
+
+h1 {
+    font-size: 32px;
+    margin: 0;
+    padding: 10px;
+    color: white;
+    -webkit-text-stroke: 1px black;
+    background: linear-gradient(to bottom, rgba(25, 25, 112, 0.8), rgba(25, 25, 112, 0));
+    text-align:center;
+}
+
+main {
+    margin:0;
+    min-height:600px;
+    background-image: url("../img/main-back3.jpg");
+}
+
+.main-nav {
+    background: linear-gradient(150deg, midnightblue, rgba(25, 25, 112, 0));
+    padding: 20px;
+    margin: 0;
+}
+
+.main-nav-list {
+    margin:0;
+    padding:0;
+}
+
+.main-nav-list li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.main-nav-list li a {
+    color: lightcyan;
+    font-size: 25px;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.main-nav-list li a:hover {
+    color: lightblue;
+}
+
+footer {
+    margin: 0;
+    height:30px;
+    color: white;
+    text-align:center;
+    background: linear-gradient(rgba(42, 75, 74, 1), rgba(32, 57, 57, 1));
+}
+.create-form {
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    width:50%;
+    margin: 10px auto;
+    padding: 20px;
+    background: linear-gradient(150deg, Gainsboro 50%, rgba(192, 192, 192, 0.5));
+    border-radius: 5%;
+    border: solid black 3px;
+}
+
+.form-field {
+    width: 70%;
+    margin:5px;
+    margin-left:30%;
+
+}
+
+.input-label {
+    font-size:18px;
+    margin: 5px auto;
+}
+
+.input {
+    margin-left:0;
+}
+
+.validation {
+    color:red;
+}
+
+.add-footboller-btn {
+    width: 50%;
+    min-height: 30px;
+    margin: 10px auto;
+    font-size: large;
+    font-weight: 700;
+    background: midnightblue;
+    color: lightcyan;
+    border-radius:10%;
+}
+
+.add-footboller-btn:hover {
+    background: mediumblue;
+}
+
+.footballers {
+    padding:2px;
+    margin:0;
+}
+.footballer-info {
+    margin: 5px;
+    padding: 10px;
+    background: linear-gradient(150deg, Gainsboro 25%, rgba(192, 192, 192, 0.5));
+    font-size: 18px;
+    border: solid black 3px;
+    border-radius: 5%;
+}
+
+.main-footballer-info {
+    display:flex;
+    justify-content:space-between;
+    margin:0;
+}
+
+.footballer-info h2{
+    margin:0;
+    padding:0;
+    width:50%;
+    font-size: 25px;
+}
+.footballer-info .team-name{
+    padding: 0;
+    margin:0;
+    width:30%;
+    text-align:center;
+}
+
+.open-change-form-btn {
+    padding:3px;
+    background-color:rgba(0, 0, 0, 0);
+    max-width: 40px;
+    max-height: 40px;
+    border:none;
+}
+
+
+.open-change-form-btn:hover {
+    padding:1px;
+    border: solid black 2px;
+}
+.open-change-form-btn:active {
+    padding: 3px;
+    border: solid black 2px;
+}
+
+.change-btn-icon {
+    width: 100%;
+    height: 100%;
+}
+
+.change-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70%;
+    margin: 5px auto;
+    padding: 10px;
+    background: linear-gradient(150deg, Gainsboro 50%, rgba(192, 192, 192, 0.5));
+    border-radius: 5%;
+    border: solid black 3px;
+}
+
+.change-footboller-btn {
+    width: 30%;
+    min-height: 30px;
+    margin: 10px auto;
+    font-size: large;
+    font-weight: 700;
+    background: midnightblue;
+    color: lightcyan;
+    border-radius: 10%;
+}
+
+.change-footboller-btn:hover {
+    background: mediumblue;
+}
+
+.change-field {
+    width: 70%;
+    margin: 5px;
+    margin-left: 35%;
+}
+
+
+
+
+
+
+
+

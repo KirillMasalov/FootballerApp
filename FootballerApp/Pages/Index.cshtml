@@ -1,0 +1,65 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Добавить футболиста";
+}
+
+<h1>@ViewData["Title"]</h1>
+<form class="create-form" method="post">
+    <div class="form-field">
+        <label asp-for="Input.FirstName" class="input-label"></label>
+        <div class="input">
+            <input asp-for="Input.FirstName" />
+        </div>
+        <span asp-validation-for="Input.FirstName" class="validation"></span>
+    </div>
+
+    <div class="form-field">
+        <label asp-for="Input.LastName" class="input-label"></label>
+        <div class="input">
+            <input asp-for="Input.LastName" />
+        </div>
+        <span asp-validation-for="Input.LastName" class="validation"></span>
+    </div>
+        <div class="form-field">
+            <label asp-for="Input.Gender" class="input-label"></label>
+            <div class="input">
+                <input type="radio" asp-for="Input.Gender" value="male" checked="checked" />
+                <span>Мужской</span>
+                <input type="radio" asp-for="Input.Gender" value="female" />
+                <span>Женский</span>
+            </div>
+        </div>
+
+        <div class="form-field">
+            <label asp-for="Input.DateOfBirth" class="input-label"></label>
+            <div class="input">
+                <input asp-for="Input.DateOfBirth" type="date" />
+            </div>
+            <span asp-validation-for="Input.DateOfBirth" class="validation"></span>
+        </div>
+
+        <div class="form-field" id="team-select">
+            <label asp-for="Input.TeamName" class="input-label"></label>
+            <div class="input">
+                <select asp-for="Input.TeamName" asp-items="Model.Teams"></select>
+            </div>
+        </div>
+
+        <div class="form-field input-off" id="team-input">
+            <div class="input">
+                <input asp-for="Input.TeamName" />
+            </div>
+            <span asp-validation-for="Input.TeamName" class="validation"></span>
+        </div>
+
+            <div class="form-field">
+                <label asp-for="Input.Country" class="input-label"></label>
+                <div class="input">
+                    <select asp-for="Input.Country" asp-items="Model.Countries"></select>
+                </div>
+            </div>
+
+            <button type="submit" class="add-footboller-btn">Добавить футболиста</button>
+</form>
+<script src="~/js/IndexTeamSelect.js"></script>

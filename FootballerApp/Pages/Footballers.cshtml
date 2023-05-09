@@ -1,0 +1,98 @@
+﻿@page
+@model FootballerApp.Pages.FootballersModel
+@{
+    ViewData["Title"] = "Все футболисты";
+}
+
+<h1>@ViewData["Title"]</h1>
+<div class="footballers">
+    @foreach (var footballer in Model.Footballers)
+    {
+    <div class="footballer-info @((Model.ValidIDForm[footballer.ID])?"":"display-off")">
+        <div class="main-footballer-info">
+            <h2>@footballer.FirstName  @footballer.LastName</h2>
+            <h2 class="team-name">@footballer.TeamName</h2>
+            <button class="open-change-form-btn">
+                <img class="change-btn-icon" src="~/img/change-button-icon.png" width="20" height="20" alt="Редактировать">
+            </button>
+        </div>
+        <p class="date-of-birth">Дата рождения: @footballer.DateOfBirth</p>
+        <p class="country">Страна: @footballer.Country</p>
+        <p class="gender">@(footballer.Gender ? "Мужчина" : "Женщина")</p>
+    </div>
+    <div class="footballer-form  @((!Model.ValidIDForm[footballer.ID])?"":"display-off")">
+        <form class="change-form" method="post">
+            <div class="id-container" style="display:none">
+                <input asp-for="Input.ID" value="@footballer.ID" />
+            </div>
+            <div class="change-field">
+                <label asp-for="Input.FirstName" class="input-label"></label>
+                <div class="input">
+                    <input asp-for="Input.FirstName" value="@footballer.FirstName"/>
+                </div>
+                <span asp-validation-for="Input.FirstName" class="validation"></span>
+            </div>
+
+            <div class="change-field">
+                <label asp-for="Input.LastName" class="input-label"></label>
+                <div class="input">
+                    <input asp-for="Input.LastName" value="@footballer.LastName"/>
+                </div>
+                <span asp-validation-for="Input.LastName" class="validation"></span>
+            </div>
+            <div class="change-field">
+                <label asp-for="Input.Gender" class="input-label"></label>
+                <div class="input">
+                    @if (footballer.Gender)
+                    {
+                        <input type="radio" asp-for="Input.Gender" value="male" checked />
+                        <span>Мужской</span>
+                        <input type="radio" asp-for="Input.Gender" value="female" />
+                        <span>Женский</span>
+                    }
+                    else
+                    {
+                        <input type="radio" asp-for="Input.Gender" value="male" />
+                        <span>Мужской</span>
+                        <input type="radio" asp-for="Input.Gender" value="female" checked/>
+                        <span>Женский</span>
+                    }
+                </div>
+            </div>
+
+            <div class="change-field">
+                <label asp-for="Input.DateOfBirth" class="input-label"></label>
+                <div class="input">
+                    <input asp-for="Input.DateOfBirth" type="date" value="@footballer.DateOfBirth.Substring(6, 4)-@footballer.DateOfBirth.Substring(3, 2)-@footballer.DateOfBirth.Substring(3, 2)"/>
+                </div>
+                <span asp-validation-for="Input.DateOfBirth" class="validation"></span>
+            </div>
+
+            <div class="change-field" id="team-select">
+                <label asp-for="Input.TeamName" class="input-label"></label>
+                <div class="input">
+                    <select asp-for="Input.TeamName" asp-items="@(Model.Teams).Select(e => { if (e.Text == footballer.TeamName) e.Selected = true;return e; })"></select>
+                </div>
+            </div>
+
+            <div class="change-field input-off" id="team-input">
+                <div class="input">
+                    <input asp-for="Input.TeamName" value="@footballer.TeamName"/>
+                </div>
+                <span asp-validation-for="Input.TeamName" class="validation"></span>
+            </div>
+
+            <div class="change-field">
+                <label asp-for="Input.Country" class="input-label"></label>
+                <div class="input">
+                    <select asp-for="Input.Country" asp-items="@(Model.Countries).Select(e => { if (e.Text == footballer.Country) e.Selected = true;return e; })"></select>
+                </div>
+            </div>
+
+            <button type="submit" class="change-footboller-btn">Сохранить</button>
+        </form>
+    </div>
+    }
+</div>
+<script src="~/js/IndexTeamSelect.js"></script>
+<script src="~/js/ChangeFootballerInfo.js"></script>

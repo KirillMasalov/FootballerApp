@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FootballerApp</title>
+    <link rel="stylesheet" href="~/css/Style.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <ul class="main-nav-list">
+                <li>
+                    <a href="/">Добавить футболиста</a>
+                </li>
+                <li>
+                    <a href="/Footballers">Все футболисты</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <footer>
+        <span>Екатерибург @DateTime.Today.Year</span>
+    </footer>
+</body>
+</html>
