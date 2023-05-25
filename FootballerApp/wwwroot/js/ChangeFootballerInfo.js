@@ -4,9 +4,6 @@ let infoPanels = document.querySelectorAll(".footballer-info");
 let changeBtns = document.querySelectorAll(".open-change-form-btn");
 let changeForms = document.querySelectorAll(".footballer-form");
 
-console.log(changeBtns.length);
-console.log(changeForms.length);
-
 for (let i = 0; i < changeBtns.length; i++) {
     let btn = changeBtns[i]
     btn.addEventListener("click", function () {

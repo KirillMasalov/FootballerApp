@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using FootballerApp.Model.Interfaces;
 using FootballerApp.Model.Footballers;
+using FootballerApp.Model;
 
 namespace FootballerApp
 {
@@ -25,6 +26,7 @@ namespace FootballerApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddEntityFrameworkSqlite().AddDbContext<SportsmanDbContext>();
             services.AddScoped<ISportsHandler, FootballersDataHandler>();
         }
 

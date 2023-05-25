@@ -7,14 +7,14 @@ if (sel.value == "") {
     name_input.classList.remove("input-off");
 }
 
-sel.addEventListener("input", function () {
+sel.addEventListener("change", function () {
     if (sel.value == "") {
         name_input.classList.remove("input-off");
+        name_input.focus();
     }
     else {
         name_input.classList.add("input-off");
     }
-    console.log(sel.value);
 })
 
 name_input.addEventListener("change", function () {

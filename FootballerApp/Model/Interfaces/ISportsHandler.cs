@@ -16,5 +16,7 @@ namespace FootballerApp.Model.Interfaces
         public void AddItem(ICreateFormInputModel input);
 
         public void ChangeItem(ISportsmenInfoInputModel input);
+
+        public void DeleteItem(ISportsmenInfoInputModel input);
     }
 }

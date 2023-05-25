@@ -5,7 +5,6 @@ C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\bin\Debug\net5.0\Foo
 C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\bin\Debug\net5.0\FootballerApp.runtimeconfig.json
 C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\bin\Debug\net5.0\FootballerApp.runtimeconfig.dev.json
 C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\bin\Debug\net5.0\FootballerApp.dll
-C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\bin\Debug\net5.0\ref\FootballerApp.dll
 C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\bin\Debug\net5.0\FootballerApp.pdb
 C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\bin\Debug\net5.0\FootballerApp.Views.dll
 C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\bin\Debug\net5.0\FootballerApp.Views.pdb
@@ -18,7 +17,6 @@ C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\obj\Debug\net5.0\Foo
 C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\obj\Debug\net5.0\FootballerApp.RazorAssemblyInfo.cache
 C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\obj\Debug\net5.0\FootballerApp.RazorAssemblyInfo.cs
 C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\obj\Debug\net5.0\staticwebassets\FootballerApp.StaticWebAssets.Manifest.cache
-C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\obj\Debug\net5.0\staticwebassets\FootballerApp.StaticWebAssets.xml
 C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\obj\Debug\net5.0\scopedcss\bundle\FootballerApp.styles.css
 C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\obj\Debug\net5.0\FootballerApp.TagHelpers.input.cache
 C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\obj\Debug\net5.0\FootballerApp.TagHelpers.output.cache
@@ -64,3 +62,13 @@ C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\bin\Debug\net5.0\run
 C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\bin\Debug\net5.0\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\bin\Debug\net5.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\bin\Debug\net5.0\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\bin\Debug\net5.0\Humanizer.dll
+C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Sqlite.dll
+C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\bin\Debug\net5.0\ref\FootballerApp.dll
+C:\Users\masal\Documents\GitHub\FootballerApp\FootballerApp\obj\Debug\net5.0\staticwebassets\FootballerApp.StaticWebAssets.xml

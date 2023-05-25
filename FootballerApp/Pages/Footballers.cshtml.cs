@@ -8,6 +8,8 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using FootballerApp.Model.Interfaces;
 using FootballerApp.Pages;
+using FootballerApp.Model;
+using FootballerApp.Model.Footballers;
 
 namespace FootballerApp.Pages
 {
@@ -25,6 +27,7 @@ namespace FootballerApp.Pages
         public FootballersModel(ISportsHandler handler)
         {
             dataHandler = handler;
+
             Countries = dataHandler.GetCountries().Select(c => new SelectListItem(c, c)).ToList();
         }
         public void OnGet()
@@ -32,7 +35,7 @@ namespace FootballerApp.Pages
             var rawFootballers = dataHandler.GetAllItems();
             ValidIDForm = new Dictionary<int, bool>();
             foreach (var footballer in rawFootballers)
-                ValidIDForm[footballer.ID] = true;
+                ValidIDForm[footballer.Id] = true;
             Footballers = rawFootballers;
             var teams = dataHandler.GetTeams().Select(t => new SelectListItem(t, t)).ToList();
 
@@ -43,12 +46,12 @@ namespace FootballerApp.Pages
         public IActionResult OnPost(InputModel input)
         {
             var id = input.ID;
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid && !input.Delete)
             {
-                var rawFootballers = dataHandler.GetAllItems();
                 ValidIDForm = new Dictionary<int, bool>();
-                foreach (var footballer in rawFootballers)
-                    ValidIDForm[footballer.ID] = true;
+                var rawFootballers = dataHandler.GetAllItems();
+                foreach (var input_footballer in rawFootballers)
+                    ValidIDForm[input_footballer.Id] = true;
                 ValidIDForm[input.ID] = false;
                 Footballers = rawFootballers;
                 var teams = dataHandler.GetTeams().Select(t => new SelectListItem(t, t)).ToList();
@@ -57,12 +60,16 @@ namespace FootballerApp.Pages
                 return Page();
             }
 
-            dataHandler.ChangeItem(input);
-            return RedirectToPage("footballers");
+            if (input.Delete)
+                dataHandler.DeleteItem(input);
+            else
+                dataHandler.ChangeItem(input);
+;           return RedirectToPage("footballers");
         }
 
         public class InputModel: ISportsmenInfoInputModel
         {
+            public bool Delete { get; set; }
             public int ID { get; set; }
             [Required(ErrorMessage = "Необходимо указать имя")]
             [StringLength(255, ErrorMessage = "Максимальная длина имени = {1}")]
@@ -81,10 +88,8 @@ namespace FootballerApp.Pages
 
             [DataType(DataType.Date)]
             [Required(ErrorMessage = "Необходимо указать дату рождения")]
-            [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
             [IndexModel.DateValidation]
             [Display(Name = "Дата рождения")]
-
             public DateTime? DateOfBirth { get; set; }
 
 

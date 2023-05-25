@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using FootballerApp.Model.Interfaces;
+using FootballerApp.Model;
 
 
 namespace FootballerApp.Pages
@@ -25,12 +26,14 @@ namespace FootballerApp.Pages
         public IndexModel(ISportsHandler handler)
         {
             dataHandler = handler;
-            Countries = dataHandler.GetCountries().Select(c => new SelectListItem(c, c)).ToList();
+            Countries = dataHandler.GetCountries()
+                .Select(g => new SelectListItem(g, g));
         }
 
         public IActionResult OnGet()
         {
-            var teams = dataHandler.GetTeams().Select(t => new SelectListItem(t, t)).ToList();
+            var teams = dataHandler.GetTeams()
+                .Select(t => new SelectListItem(t, t)).ToList();
             teams.Add(new SelectListItem("Добавить команду", ""));
             Teams = teams;
             return Page();
@@ -41,7 +44,8 @@ namespace FootballerApp.Pages
         {
             if (!ModelState.IsValid)
             {
-                var teams = dataHandler.GetTeams().Select(t => new SelectListItem(t, t)).ToList();
+                var teams = dataHandler.GetTeams()
+                    .Select(t => new SelectListItem(t, t)).ToList();
                 teams.Add(new SelectListItem("Добавить команду", ""));
                 Teams = teams;
                 return Page();
@@ -88,10 +92,8 @@ namespace FootballerApp.Pages
 
             [DataType(DataType.Date)]
             [Required(ErrorMessage = "Необходимо указать дату рождения")]
-            [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
             [DateValidation]
             [Display(Name = "Дата рождения")]
-
             public DateTime? DateOfBirth { get; set; }
 
 

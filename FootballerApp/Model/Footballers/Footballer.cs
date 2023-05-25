@@ -4,20 +4,22 @@ using System.Linq;
 using System.Threading.Tasks;
 using FootballerApp.Model.Interfaces;
 using Microsoft.Data.Sqlite;
+using FootballerApp.Pages;
 
 namespace FootballerApp.Model.Footballers
 {
-    public class Footballer: SportsmanItem
+    public class Footballer : SportsmanItem
     {
-        public Footballer(SqliteDataReader reader)
+        public Footballer() : base()
+        { }
+        public Footballer(IndexModel.InputModel input)
         {
-            ID = reader.GetInt32(0);
-            FirstName = reader.GetString(1);
-            LastName = reader.GetString(2);
-            Gender = reader.GetBoolean(3);
-            DateOfBirth = reader.GetString(4);
-            TeamName = reader.GetString(5);
-            Country = reader.GetString(6);
+            FirstName = input.FirstName;
+            LastName = input.LastName;
+            Gender = input.Gender == "male";
+            DateOfBirth = DateTime.Parse(input.DateOfBirth.ToString());
+            TeamName = input.TeamName;
+            Country = input.Country;
         }
     }
 }
